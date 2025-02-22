@@ -30,7 +30,8 @@ export default function HomePage() {
         <section className="py-12 bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <AspectRatio ratio={16/9} className="bg-black rounded-lg overflow-hidden">
+              <h2 className="text-3xl font-bold text-white mb-6 text-center">Featured Video</h2>
+              <AspectRatio ratio={16/9} className="bg-black rounded-lg overflow-hidden border-2 border-gray-700">
                 <video 
                   controls
                   className="w-full h-full"
@@ -40,6 +41,10 @@ export default function HomePage() {
                   Your browser does not support the video tag.
                 </video>
               </AspectRatio>
+              <p className="text-gray-400 text-center mt-4">
+                {/* This message will show until we add the actual video */}
+                Preview video coming soon
+              </p>
             </div>
           </div>
         </section>
