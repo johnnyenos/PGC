@@ -19,7 +19,7 @@ export default function Navbar() {
             <NavigationMenuItem>
               <Link href="/">
                 <Button variant="ghost" className="flex items-center gap-2">
-                  <Medal className="h-5 w-5" />
+                  <Medal className="h-5 w-5 text-[#E31B23]" />
                   <span className="font-bold">Pure Game Classic</span>
                 </Button>
               </Link>
@@ -64,7 +64,7 @@ export default function Navbar() {
             </Button>
           ) : (
             <Link href="/auth">
-              <Button>Sign In</Button>
+              <Button className="bg-[#004B87] hover:bg-[#004B87]/90">Sign In</Button>
             </Link>
           )}
         </div>
