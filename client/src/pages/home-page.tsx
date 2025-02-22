@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Navbar from "@/components/layout/navbar";
 import { Calendar, MapPin, QrCode } from "lucide-react";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export default function HomePage() {
   return (
@@ -22,30 +21,6 @@ export default function HomePage() {
               <Link href="/giveaway">
                 <Button size="lg" className="bg-[#004B87] hover:bg-[#004B87]/90">Enter Giveaway</Button>
               </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Video Section */}
-        <section className="py-12 bg-gray-900">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-white mb-6 text-center">Featured Video</h2>
-              <AspectRatio ratio={16/9} className="bg-black rounded-lg overflow-hidden border-2 border-gray-700">
-                <video 
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover"
-                >
-                  <source src="/ScreenRecording_02-22-2025 11-16-38_1.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </AspectRatio>
-              <p className="text-gray-400 text-center mt-4">
-                Experiencing the Pure Game Classic
-              </p>
             </div>
           </div>
         </section>
