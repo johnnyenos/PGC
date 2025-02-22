@@ -33,17 +33,18 @@ export default function HomePage() {
               <h2 className="text-3xl font-bold text-white mb-6 text-center">Featured Video</h2>
               <AspectRatio ratio={16/9} className="bg-black rounded-lg overflow-hidden border-2 border-gray-700">
                 <video 
-                  controls
-                  className="w-full h-full"
-                  poster="/video-thumbnail.jpg"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
                 >
-                  <source src="/path-to-your-video.mp4" type="video/mp4" />
+                  <source src="/ScreenRecording_02-22-2025 11-16-38_1.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </AspectRatio>
               <p className="text-gray-400 text-center mt-4">
-                {/* This message will show until we add the actual video */}
-                Preview video coming soon
+                Experiencing the Pure Game Classic
               </p>
             </div>
           </div>
