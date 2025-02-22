@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Navbar from "@/components/layout/navbar";
 import { Calendar, MapPin, QrCode } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,32 @@ export default function HomePage() {
               <Link href="/giveaway">
                 <Button size="lg" className="bg-[#004B87] hover:bg-[#004B87]/90">Enter Giveaway</Button>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Event Images Section */}
+        <section className="py-8">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <AspectRatio ratio={16/9}>
+                  <img 
+                    src="/AEB8F1CD-B10C-469E-95B4-91BED78A7F93.png" 
+                    alt="Pure Game Classic Schedule" 
+                    className="w-full h-full object-cover"
+                  />
+                </AspectRatio>
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <AspectRatio ratio={16/9}>
+                  <img 
+                    src="/58FCBF88-9EB2-41C8-BF3B-1AC8D8234DE9.png" 
+                    alt="Pure Game Classic Details" 
+                    className="w-full h-full object-cover"
+                  />
+                </AspectRatio>
+              </div>
             </div>
           </div>
         </section>
