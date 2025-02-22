@@ -25,6 +25,57 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Schedule Section */}
+        <section className="py-16 bg-[#f8f9fa]">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-8">Event Schedule</h2>
+
+            {/* Middle School Events */}
+            <div className="space-y-4 mb-8">
+              <h3 className="text-xl font-semibold text-[#004B87]">Middle School Division</h3>
+              <div className="grid gap-2">
+                <p className="text-lg"><span className="font-semibold">10:00 AM</span> - Middle School Girls 3 Point Contest</p>
+                <p className="text-lg"><span className="font-semibold">10:30 AM</span> - Middle School Boys 3 Point Contest</p>
+                <p className="text-lg"><span className="font-semibold">11:00 AM</span> - Middle School Girls All Star Game</p>
+                <p className="text-lg"><span className="font-semibold">12:00 PM</span> - Middle School Boys All Star Game</p>
+              </div>
+            </div>
+
+            {/* Rising Stars Events */}
+            <div className="space-y-4 mb-8">
+              <h3 className="text-xl font-semibold text-[#E31B23]">Rising Stars Division</h3>
+              <div className="grid gap-2">
+                <p className="text-lg"><span className="font-semibold">1:00 PM</span> - Rising Stars High School Girls 3 Point Contest</p>
+                <p className="text-lg"><span className="font-semibold">1:30 PM</span> - Rising Stars High School Boys 3 Point Contest</p>
+                <p className="text-lg"><span className="font-semibold">2:00 PM</span> - Rising Stars High School Girls All Star Game</p>
+                <p className="text-lg"><span className="font-semibold">3:00 PM</span> - Rising Stars High School Boys All Star Game</p>
+              </div>
+            </div>
+
+            {/* Varsity Events */}
+            <div className="space-y-4 mb-8">
+              <h3 className="text-xl font-semibold text-[#004B87]">Varsity Division</h3>
+              <div className="grid gap-2">
+                <p className="text-lg"><span className="font-semibold">4:00 PM</span> - Varsity Dunk Contest</p>
+                <p className="text-lg"><span className="font-semibold">4:30 PM</span> - Varsity Girls 3 Point Contest</p>
+                <p className="text-lg"><span className="font-semibold">5:00 PM</span> - Varsity Boys 3 Point Contest</p>
+                <p className="text-lg"><span className="font-semibold">5:30 PM</span> - Varsity Girls All Star Game</p>
+                <p className="text-lg"><span className="font-semibold">6:30 PM</span> - Varsity Boys All Star Game</p>
+              </div>
+            </div>
+
+            {/* Admission Info */}
+            <div className="mt-12 text-center p-6 bg-white rounded-lg shadow-sm">
+              <h3 className="text-2xl font-bold mb-4">Admission</h3>
+              <div className="space-y-2">
+                <p className="text-lg">General Admission: <span className="font-semibold">$15</span></p>
+                <p className="text-lg">Students with ID: <span className="font-semibold">$10</span></p>
+                <p className="text-lg">Coaches and Kids 7 & Under: <span className="font-semibold text-[#E31B23]">FREE</span></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Event Details */}
         <section className="py-16 container mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
