@@ -19,7 +19,7 @@ export default function HomePage() {
                 <Button size="lg" className="bg-[#E31B23] hover:bg-[#E31B23]/90">View Participants</Button>
               </Link>
               <Link href="/giveaway">
-                <Button size="lg" variant="outline" className="text-white border-white hover:bg-[#004B87]/20">Enter Giveaway</Button>
+                <Button size="lg" className="bg-[#004B87] hover:bg-[#004B87]/90">Enter Giveaway</Button>
               </Link>
             </div>
           </div>
