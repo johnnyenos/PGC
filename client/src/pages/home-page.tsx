@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Navbar from "@/components/layout/navbar";
-import { Calendar, MapPin, QrCode } from "lucide-react";
+import { Calendar, MapPin, QrCode, Instagram } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Suspense, lazy } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -9,7 +9,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 // Lazy load video section
 const VideoSection = lazy(() => import("@/components/sections/video-section"));
 
-// Optimize schedule rendering
 const ScheduleItem = ({ time, event }: { time: string; event: string }) => (
   <p className="text-lg">
     <span className="font-semibold">{time}</span> - {event}
@@ -32,7 +31,9 @@ export default function HomePage() {
                 className="w-full h-full object-contain"
               />
             </div>
-            <p className="text-2xl mt-8 text-white font-medium animate-[fade-in_1s_ease-in]">Where pure basketball dreams take flight</p>
+            <p className="text-2xl mt-8 text-white font-medium opacity-0 animate-fade-in">
+              Where pure basketball dreams take flight
+            </p>
           </div>
         </section>
 
@@ -53,8 +54,8 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="/AEB8F1CD-B10C-469E-95B4-91BED78A7F93.png" 
-                  alt="Pure Game Classic Schedule" 
+                  src="/58FCBF88-9EB2-41C8-BF3B-1AC8D8234DE9.png" 
+                  alt="Pure Game Classic Details" 
                   className="w-full h-auto"
                   loading="lazy"
                   decoding="async"
@@ -62,8 +63,8 @@ export default function HomePage() {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="/58FCBF88-9EB2-41C8-BF3B-1AC8D8234DE9.png" 
-                  alt="Pure Game Classic Details" 
+                  src="/AEB8F1CD-B10C-469E-95B4-91BED78A7F93.png" 
+                  alt="Pure Game Classic Schedule" 
                   className="w-full h-auto"
                   loading="lazy"
                   decoding="async"
@@ -73,52 +74,21 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Schedule Section */}
-        <section className="py-16">
+        {/* Event Features */}
+        <section className="py-16 bg-gray-800/50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-8">Event Schedule</h2>
-
-            {/* Middle School Events */}
-            <div className="space-y-4 mb-8">
-              <h3 className="text-xl font-semibold text-[#E31B23]">Middle School Division</h3>
-              <div className="grid gap-2">
-                <ScheduleItem time="10:00 AM" event="Middle School Girls 3 Point Contest" />
-                <ScheduleItem time="10:30 AM" event="Middle School Boys 3 Point Contest" />
-                <ScheduleItem time="11:00 AM" event="Middle School Girls All Star Game" />
-                <ScheduleItem time="12:00 PM" event="Middle School Boys All Star Game" />
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div className="p-6 rounded-lg border border-gray-700 hover:border-[#E31B23] transition-colors">
+                <h3 className="text-2xl font-bold mb-4">Live Music</h3>
+                <p className="text-gray-300">Experience amazing performances throughout the event</p>
               </div>
-            </div>
-
-            {/* Rising Stars Events */}
-            <div className="space-y-4 mb-8">
-              <h3 className="text-xl font-semibold text-[#E31B23]">Rising Stars Division</h3>
-              <div className="grid gap-2">
-                <ScheduleItem time="1:00 PM" event="Rising Stars High School Girls 3 Point Contest" />
-                <ScheduleItem time="1:30 PM" event="Rising Stars High School Boys 3 Point Contest" />
-                <ScheduleItem time="2:00 PM" event="Rising Stars High School Girls All Star Game" />
-                <ScheduleItem time="3:00 PM" event="Rising Stars High School Boys All Star Game" />
+              <div className="p-6 rounded-lg border border-gray-700 hover:border-[#004B87] transition-colors">
+                <h3 className="text-2xl font-bold mb-4">Food Trucks</h3>
+                <p className="text-gray-300">Enjoy a variety of delicious local food options</p>
               </div>
-            </div>
-
-            {/* Varsity Events */}
-            <div className="space-y-4 mb-8">
-              <h3 className="text-xl font-semibold text-[#E31B23]">Varsity Division</h3>
-              <div className="grid gap-2">
-                <ScheduleItem time="4:00 PM" event="Varsity Dunk Contest" />
-                <ScheduleItem time="4:30 PM" event="Varsity Girls 3 Point Contest" />
-                <ScheduleItem time="5:00 PM" event="Varsity Boys 3 Point Contest" />
-                <ScheduleItem time="5:30 PM" event="Varsity Girls All Star Game" />
-                <ScheduleItem time="6:30 PM" event="Varsity Boys All Star Game" />
-              </div>
-            </div>
-
-            {/* Admission Info */}
-            <div className="mt-12 text-center p-6 rounded-lg border border-gray-700">
-              <h3 className="text-2xl font-bold mb-4">Admission</h3>
-              <div className="space-y-2">
-                <p className="text-lg">General Admission: <span className="font-semibold">$15</span></p>
-                <p className="text-lg">Students with ID: <span className="font-semibold">$10</span></p>
-                <p className="text-lg">Coaches and Kids 7 & Under: <span className="font-semibold text-[#E31B23]">FREE</span></p>
+              <div className="p-6 rounded-lg border border-gray-700 hover:border-[#E31B23] transition-colors">
+                <h3 className="text-2xl font-bold mb-4">Concessions</h3>
+                <p className="text-gray-300">Quick snacks and refreshments available</p>
               </div>
             </div>
           </div>
@@ -152,6 +122,19 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Social Media */}
+        <section className="py-8 text-center">
+          <a 
+            href="https://instagram.com/puregameclassic" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white hover:opacity-90 transition-opacity"
+          >
+            <Instagram className="w-5 h-5" />
+            <span>Follow us on Instagram</span>
+          </a>
         </section>
       </main>
     </div>
