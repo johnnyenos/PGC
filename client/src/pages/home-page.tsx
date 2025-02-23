@@ -5,6 +5,7 @@ import { Calendar, MapPin, QrCode, Instagram } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Suspense, lazy } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+import AnimatedBackground from "@/components/sections/animated-background";
 
 // Lazy load video section
 const VideoSection = lazy(() => import("@/components/sections/video-section"));
@@ -17,7 +18,8 @@ const ScheduleItem = ({ time, event }: { time: string; event: string }) => (
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen relative">
+      <AnimatedBackground />
       <Navbar />
 
       <main>
