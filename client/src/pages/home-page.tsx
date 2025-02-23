@@ -22,28 +22,11 @@ export default function HomePage() {
       <Navbar />
 
       <main>
-        {/* Hero Section - Enhanced */}
-        <section className="py-32 px-4 bg-[#0A0F1C] relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#004B87]/20 to-[#E31B23]/20" />
-          <div className="container mx-auto text-center text-white relative">
-            <h1 className="text-6xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
-              Pure Game Classic 2025
-            </h1>
-            <p className="text-2xl md:text-3xl font-light mb-8 tracking-wide text-gray-300">
-              Where Basketball Dreams Take Flight
-            </p>
-            <div className="flex gap-4 justify-center">
-              <Link href="/all-stars">
-                <Button className="bg-[#E31B23] hover:bg-[#E31B23]/90 text-white">
-                  View All-Stars
-                </Button>
-              </Link>
-              <Link href="/giveaway">
-                <Button variant="outline" className="text-white border-white hover:bg-white hover:text-[#0A0F1C]">
-                  Enter Giveaway
-                </Button>
-              </Link>
-            </div>
+        {/* Hero Section - Optimized */}
+        <section className="py-20 px-4 bg-[#0A0F1C]">
+          <div className="container mx-auto text-center text-white">
+            <h1 className="text-5xl font-bold mb-6">Pure Game Classic 2025</h1>
+            <p className="text-xl mb-8">Where Basketball Dreams Take Flight</p>
           </div>
         </section>
 
@@ -63,18 +46,18 @@ export default function HomePage() {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="rounded-lg overflow-hidden shadow-lg">
-                <img
-                  src="/AEB8F1CD-B10C-469E-95B4-91BED78A7F93.png"
-                  alt="Pure Game Classic Schedule"
+                <img 
+                  src="/AEB8F1CD-B10C-469E-95B4-91BED78A7F93.png" 
+                  alt="Pure Game Classic Schedule" 
                   className="w-full h-auto"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
-                <img
-                  src="/58FCBF88-9EB2-41C8-BF3B-1AC8D8234DE9.png"
-                  alt="Pure Game Classic Details"
+                <img 
+                  src="/58FCBF88-9EB2-41C8-BF3B-1AC8D8234DE9.png" 
+                  alt="Pure Game Classic Details" 
                   className="w-full h-auto"
                   loading="lazy"
                   decoding="async"
