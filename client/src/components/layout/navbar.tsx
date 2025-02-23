@@ -5,7 +5,6 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import { Medal } from "lucide-react";
 
 export default function Navbar() {
   return (
@@ -15,9 +14,12 @@ export default function Navbar() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/">
-                <Button variant="ghost" className="flex items-center gap-2">
-                  <Medal className="h-5 w-5 text-[#E31B23]" />
-                  <span className="font-bold">Pure Game Classic</span>
+                <Button variant="ghost" className="p-0">
+                  <img 
+                    src="/IMG_0099.png" 
+                    alt="Pure Game Classic Logo" 
+                    className="h-10 w-auto"
+                  />
                 </Button>
               </Link>
             </NavigationMenuItem>
