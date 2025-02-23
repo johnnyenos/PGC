@@ -25,8 +25,13 @@ export default function HomePage() {
         {/* Hero Section */}
         <section className="py-20 px-4">
           <div className="container mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6">Pure Game Classic 2025</h1>
-            <p className="text-xl mb-8">Where Basketball Dreams Take Flight</p>
+            <div className="animate-[spin_3s_linear_infinite] w-64 h-64 mx-auto">
+              <img 
+                src="/IMG_9553.png" 
+                alt="Pure Game Classic Logo" 
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
         </section>
 
