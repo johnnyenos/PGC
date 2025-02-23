@@ -1,4 +1,4 @@
-import { pgTable, text, serial, varchar, integer, json, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, varchar, integer, json, timestamp, boolean } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -7,6 +7,10 @@ export const users = pgTable("users", {
   username: text("username").notNull().unique(),
   password: text("password").notNull(),
   email: text("email").notNull().unique(),
+  isVerified: boolean("is_verified").default(false),
+  verificationToken: text("verification_token"),
+  verificationTokenExpiry: timestamp("verification_token_expiry"),
+  hasSignedWaiver: boolean("has_signed_waiver").default(false),
 });
 
 export const players = pgTable("players", {

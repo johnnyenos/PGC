@@ -12,6 +12,8 @@ import DunkContestPage from "@/pages/dunk-contest-page";
 import AllStarsPage from "@/pages/all-stars-page";
 import GiveawayPage from "@/pages/giveaway-page";
 import AuthPage from "@/pages/auth-page";
+import VerifyEmailPage from "@/pages/verify-email";
+import WaiverPage from "@/pages/waiver-page";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -24,6 +26,8 @@ function Router() {
       <Route path="/all-stars" component={AllStarsPage} />
       <ProtectedRoute path="/giveaway" component={GiveawayPage} />
       <Route path="/auth" component={AuthPage} />
+      <Route path="/verify-email" component={VerifyEmailPage} />
+      <ProtectedRoute path="/waiver" component={WaiverPage} />
       <Route component={NotFound} />
     </Switch>
   );
