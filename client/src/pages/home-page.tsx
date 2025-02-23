@@ -23,24 +23,24 @@ export default function HomePage() {
       <Navbar />
 
       <main>
-        {/* Hero Section */}
-        <section className="py-20 px-4">
+        {/* Hero Section - reduced vertical padding */}
+        <section className="py-8 px-4">
           <div className="container mx-auto text-center">
-            <div className="w-[600px] h-[600px] mx-auto">
+            <div className="w-[500px] h-[500px] mx-auto">
               <img 
                 src="/IMG_9553.png" 
                 alt="Pure Game Classic Logo" 
                 className="w-full h-full object-contain"
               />
             </div>
-            <p className="text-2xl mt-8 text-white font-medium opacity-0 animate-fade-in">
+            <p className="text-2xl mt-4 text-white font-medium opacity-0 animate-fade-in">
               Where pure basketball dreams take flight
             </p>
           </div>
         </section>
 
-        {/* Video Section */}
-        <section className="py-12">
+        {/* Video Section - reduced vertical padding */}
+        <section className="py-6">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <Suspense fallback={<Skeleton className="w-full aspect-video rounded-lg" />}>
