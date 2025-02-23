@@ -18,20 +18,20 @@ const ScheduleItem = ({ time, event }: { time: string; event: string }) => (
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-900">
       <Navbar />
 
       <main>
-        {/* Hero Section - Optimized */}
-        <section className="py-20 px-4 bg-[#0A0F1C]">
-          <div className="container mx-auto text-center text-white">
+        {/* Hero Section */}
+        <section className="py-20 px-4">
+          <div className="container mx-auto text-center">
             <h1 className="text-5xl font-bold mb-6">Pure Game Classic 2025</h1>
             <p className="text-xl mb-8">Where Basketball Dreams Take Flight</p>
           </div>
         </section>
 
-        {/* Video Section - Lazy loaded */}
-        <section className="py-12 bg-gray-900">
+        {/* Video Section */}
+        <section className="py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <Suspense fallback={<Skeleton className="w-full aspect-video rounded-lg" />}>
@@ -41,7 +41,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Event Images Section - Optimized with lazy loading */}
+        {/* Event Images Section */}
         <section className="py-8">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-6">
@@ -67,8 +67,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Schedule Section - Optimized */}
-        <section className="py-16 bg-[#0A0F1C] text-white">
+        {/* Schedule Section */}
+        <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-8">Event Schedule</h2>
 
@@ -107,7 +107,7 @@ export default function HomePage() {
             </div>
 
             {/* Admission Info */}
-            <div className="mt-12 text-center p-6 bg-[#0A0F1C]/50 rounded-lg border border-gray-700">
+            <div className="mt-12 text-center p-6 rounded-lg border border-gray-700">
               <h3 className="text-2xl font-bold mb-4">Admission</h3>
               <div className="space-y-2">
                 <p className="text-lg">General Admission: <span className="font-semibold">$15</span></p>
@@ -118,7 +118,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Event Details - Optimized */}
+        {/* Event Details */}
         <section className="py-16 container mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="flex items-center gap-4">
