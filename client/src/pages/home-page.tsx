@@ -34,7 +34,6 @@ export default function HomePage() {
         <section className="py-12 bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-white mb-6 text-center">Featured Video</h2>
               <Suspense fallback={<Skeleton className="w-full aspect-video rounded-lg" />}>
                 <VideoSection />
               </Suspense>
