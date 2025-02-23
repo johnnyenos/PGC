@@ -44,62 +44,94 @@ export function setupAuth(app: Express) {
 
   passport.use(
     new LocalStrategy(async (username, password, done) => {
-      const user = await storage.getUserByUsername(username);
-      if (!user || !(await comparePasswords(password, user.password))) {
-        return done(null, false);
-      } else {
+      try {
+        const user = await storage.getUserByUsername(username);
+        if (!user || !(await comparePasswords(password, user.password))) {
+          return done(null, false);
+        }
         return done(null, user);
+      } catch (error) {
+        return done(error);
       }
     }),
   );
 
   passport.serializeUser((user, done) => done(null, user.id));
   passport.deserializeUser(async (id: number, done) => {
-    const user = await storage.getUser(id);
-    done(null, user);
+    try {
+      const user = await storage.getUser(id);
+      done(null, user);
+    } catch (error) {
+      done(error);
+    }
   });
 
   app.post("/api/register", async (req, res, next) => {
-    const existingUser = await storage.getUserByUsername(req.body.username);
-    if (existingUser) {
-      return res.status(400).send("Username already exists");
-    }
-
-    const verificationToken = generateVerificationToken();
-    const tokenExpiry = new Date();
-    tokenExpiry.setHours(tokenExpiry.getHours() + 24); // Token expires in 24 hours
-
-    const user = await storage.createUser({
-      ...req.body,
-      password: await hashPassword(req.body.password),
-      verificationToken,
-      verificationTokenExpiry: tokenExpiry,
-      isVerified: false,
-      hasSignedWaiver: false,
-    });
-
-    // Send verification email
     try {
-      await sendVerificationEmail(user.email, verificationToken);
-    } catch (error) {
-      console.error("Failed to send verification email:", error);
-      // Don't fail registration if email fails, but log it
-    }
+      // Check for existing username
+      const existingUserByUsername = await storage.getUserByUsername(req.body.username);
+      if (existingUserByUsername) {
+        return res.status(400).json({ error: "Username already exists" });
+      }
 
-    req.login(user, (err) => {
-      if (err) return next(err);
-      res.status(201).json(user);
-    });
+      // Check for existing email
+      const existingUserByEmail = await storage.getUserByEmail(req.body.email);
+      if (existingUserByEmail) {
+        return res.status(400).json({ error: "Email already exists" });
+      }
+
+      const verificationToken = generateVerificationToken();
+      const tokenExpiry = new Date();
+      tokenExpiry.setHours(tokenExpiry.getHours() + 24); // Token expires in 24 hours
+
+      const user = await storage.createUser({
+        ...req.body,
+        password: await hashPassword(req.body.password),
+        verificationToken,
+        verificationTokenExpiry: tokenExpiry,
+        isVerified: false,
+        hasSignedWaiver: false,
+      });
+
+      // Send verification email
+      try {
+        await sendVerificationEmail(user.email, verificationToken);
+      } catch (error) {
+        console.error("Failed to send verification email:", error);
+        // Don't fail registration if email fails, but log it
+      }
+
+      req.login(user, (err) => {
+        if (err) return next(err);
+        res.status(201).json(user);
+      });
+    } catch (error: any) {
+      console.error("Registration error:", error);
+      if (error.code === '23505') { // PostgreSQL unique constraint violation
+        return res.status(400).json({ error: "Username or email already exists" });
+      }
+      next(error);
+    }
   });
 
-  app.post("/api/login", passport.authenticate("local"), (req, res) => {
-    if (!req.user.isVerified) {
-      return res.status(403).json({
-        error: "Email not verified",
-        message: "Please verify your email before logging in",
+  app.post("/api/login", (req, res, next) => {
+    passport.authenticate("local", (err, user, info) => {
+      if (err) return next(err);
+      if (!user) return res.status(401).json({ error: "Invalid credentials" });
+
+      req.login(user, (err) => {
+        if (err) return next(err);
+
+        if (!user.isVerified) {
+          return res.status(403).json({
+            error: "Email not verified",
+            message: "Please verify your email before logging in",
+          });
+        }
+
+        res.json(user);
       });
-    }
-    res.status(200).json(req.user);
+    })(req, res, next);
   });
 
   app.post("/api/logout", (req, res, next) => {
