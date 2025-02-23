@@ -32,7 +32,7 @@ export default function HomePage() {
                 className="w-full h-full object-contain"
               />
             </div>
-            <p className="text-2xl mt-8 text-white font-medium">Where pure basketball dreams take flight</p>
+            <p className="text-2xl mt-8 text-white font-medium animate-[fade-in_1s_ease-in]">Where pure basketball dreams take flight</p>
           </div>
         </section>
 
