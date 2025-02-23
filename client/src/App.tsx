@@ -1,17 +1,13 @@
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
-import { AuthProvider } from "./hooks/use-auth";
 import { Toaster } from "@/components/ui/toaster";
-import { ProtectedRoute } from "./lib/protected-route";
 
 import HomePage from "@/pages/home-page";
 import PlayersPage from "@/pages/players-page";
 import ThreePointPage from "@/pages/three-point-page";
 import DunkContestPage from "@/pages/dunk-contest-page";
 import AllStarsPage from "@/pages/all-stars-page";
-import GiveawayPage from "@/pages/giveaway-page";
-import AuthPage from "@/pages/auth-page";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -22,8 +18,6 @@ function Router() {
       <Route path="/three-point" component={ThreePointPage} />
       <Route path="/dunk-contest" component={DunkContestPage} />
       <Route path="/all-stars" component={AllStarsPage} />
-      <ProtectedRoute path="/giveaway" component={GiveawayPage} />
-      <Route path="/auth" component={AuthPage} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -32,10 +26,8 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <Router />
-        <Toaster />
-      </AuthProvider>
+      <Router />
+      <Toaster />
     </QueryClientProvider>
   );
 }

@@ -27,14 +27,6 @@ export default function HomePage() {
           <div className="container mx-auto text-center text-white">
             <h1 className="text-5xl font-bold mb-6">Pure Game Classic 2025</h1>
             <p className="text-xl mb-8">Where Basketball Dreams Take Flight</p>
-            <div className="flex justify-center gap-4">
-              <Link href="/players">
-                <Button size="lg" className="bg-[#E31B23] hover:bg-[#E31B23]/90">View Participants</Button>
-              </Link>
-              <Link href="/giveaway">
-                <Button size="lg" className="bg-[#004B87] hover:bg-[#004B87]/90">Enter Giveaway</Button>
-              </Link>
-            </div>
           </div>
         </section>
 
@@ -151,7 +143,7 @@ export default function HomePage() {
               <div>
                 <h3 className="font-bold">Quick Access</h3>
                 <p>Scan QR code for</p>
-                <p>Giveaway Entry</p>
+                <p>Event Details</p>
               </div>
             </div>
           </div>
