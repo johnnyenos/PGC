@@ -1,6 +1,6 @@
-import { users, players, type User, type InsertUser, type Player, type InsertPlayer } from "@shared/schema";
+import { users, players, giveawayEntries, type User, type InsertUser, type Player, type GiveawayEntry } from "@shared/schema";
 import { db } from "./db";
-import { eq } from "drizzle-orm";
+import { eq, and } from "drizzle-orm";
 import session from "express-session";
 import createMemoryStore from "memorystore";
 
@@ -18,8 +18,14 @@ export interface IStorage {
   getPlayers(): Promise<Player[]>;
   getPlayersByCategory(category: string): Promise<Player[]>;
   getPlayersByTeam(team: string): Promise<Player[]>;
-  createPlayer(player: InsertPlayer): Promise<Player>;
-  updatePlayer(id: number, player: Partial<InsertPlayer>): Promise<Player>;
+  createPlayer(player: any): Promise<Player>;
+  updatePlayer(id: number, player: Partial<any>): Promise<Player>;
+
+  // Giveaway operations
+  createGiveawayEntry(entry: GiveawayEntry): Promise<GiveawayEntry>;
+  getGiveawayEntry(userId: number): Promise<GiveawayEntry | undefined>;
+  getAllGiveawayEntries(): Promise<GiveawayEntry[]>;
+  updateGiveawayEntry(id: number, updates: Partial<GiveawayEntry>): Promise<GiveawayEntry>;
 
   sessionStore: session.Store;
 }
@@ -76,18 +82,45 @@ export class DatabaseStorage implements IStorage {
     return await db.select().from(players).where(eq(players.team, team));
   }
 
-  async createPlayer(player: InsertPlayer): Promise<Player> {
+  async createPlayer(player: any): Promise<Player> {
     const [newPlayer] = await db.insert(players).values(player).returning();
     return newPlayer;
   }
 
-  async updatePlayer(id: number, player: Partial<InsertPlayer>): Promise<Player> {
+  async updatePlayer(id: number, player: Partial<any>): Promise<Player> {
     const [updatedPlayer] = await db
       .update(players)
       .set(player)
       .where(eq(players.id, id))
       .returning();
     return updatedPlayer;
+  }
+
+  // Giveaway operations
+  async createGiveawayEntry(entry: GiveawayEntry): Promise<GiveawayEntry> {
+    const [newEntry] = await db.insert(giveawayEntries).values(entry).returning();
+    return newEntry;
+  }
+
+  async getGiveawayEntry(userId: number): Promise<GiveawayEntry | undefined> {
+    const [entry] = await db
+      .select()
+      .from(giveawayEntries)
+      .where(eq(giveawayEntries.userId, userId));
+    return entry;
+  }
+
+  async getAllGiveawayEntries(): Promise<GiveawayEntry[]> {
+    return await db.select().from(giveawayEntries);
+  }
+
+  async updateGiveawayEntry(id: number, updates: Partial<GiveawayEntry>): Promise<GiveawayEntry> {
+    const [entry] = await db
+      .update(giveawayEntries)
+      .set(updates)
+      .where(eq(giveawayEntries.id, id))
+      .returning();
+    return entry;
   }
 }
 

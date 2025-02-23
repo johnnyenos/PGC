@@ -14,6 +14,7 @@ import GiveawayPage from "@/pages/giveaway-page";
 import AuthPage from "@/pages/auth-page";
 import VerifyEmailPage from "@/pages/verify-email";
 import WaiverPage from "@/pages/waiver-page";
+import GiveawayEntriesPage from "@/pages/admin/giveaway-entries";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -28,6 +29,7 @@ function Router() {
       <Route path="/auth" component={AuthPage} />
       <Route path="/verify-email" component={VerifyEmailPage} />
       <ProtectedRoute path="/waiver" component={WaiverPage} />
+      <ProtectedRoute path="/admin/giveaway-entries" component={GiveawayEntriesPage} />
       <Route component={NotFound} />
     </Switch>
   );
