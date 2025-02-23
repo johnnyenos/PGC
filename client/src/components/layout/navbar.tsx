@@ -41,11 +41,6 @@ export default function Navbar() {
                 <Button variant="ghost">All-Stars</Button>
               </Link>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/giveaway">
-                <Button variant="ghost">Giveaway</Button>
-              </Link>
-            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
       </div>
