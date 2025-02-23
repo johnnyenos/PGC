@@ -69,13 +69,13 @@ export default function HomePage() {
         </section>
 
         {/* Schedule Section - Optimized */}
-        <section className="py-16 bg-[#f8f9fa]">
+        <section className="py-16 bg-[#0A0F1C] text-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-8">Event Schedule</h2>
 
             {/* Middle School Events */}
             <div className="space-y-4 mb-8">
-              <h3 className="text-xl font-semibold text-[#004B87]">Middle School Division</h3>
+              <h3 className="text-xl font-semibold text-[#E31B23]">Middle School Division</h3>
               <div className="grid gap-2">
                 <ScheduleItem time="10:00 AM" event="Middle School Girls 3 Point Contest" />
                 <ScheduleItem time="10:30 AM" event="Middle School Boys 3 Point Contest" />
@@ -97,7 +97,7 @@ export default function HomePage() {
 
             {/* Varsity Events */}
             <div className="space-y-4 mb-8">
-              <h3 className="text-xl font-semibold text-[#004B87]">Varsity Division</h3>
+              <h3 className="text-xl font-semibold text-[#E31B23]">Varsity Division</h3>
               <div className="grid gap-2">
                 <ScheduleItem time="4:00 PM" event="Varsity Dunk Contest" />
                 <ScheduleItem time="4:30 PM" event="Varsity Girls 3 Point Contest" />
@@ -108,7 +108,7 @@ export default function HomePage() {
             </div>
 
             {/* Admission Info */}
-            <div className="mt-12 text-center p-6 bg-white rounded-lg shadow-sm">
+            <div className="mt-12 text-center p-6 bg-[#0A0F1C]/50 rounded-lg border border-gray-700">
               <h3 className="text-2xl font-bold mb-4">Admission</h3>
               <div className="space-y-2">
                 <p className="text-lg">General Admission: <span className="font-semibold">$15</span></p>
