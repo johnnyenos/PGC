@@ -16,7 +16,7 @@ export default function Navbar() {
               <Link href="/">
                 <Button variant="ghost" className="p-0">
                   <img 
-                    src="/IMG_0099.png" 
+                    src="/IMG_9553.png" 
                     alt="Pure Game Classic Logo" 
                     className="h-10 w-auto"
                   />
