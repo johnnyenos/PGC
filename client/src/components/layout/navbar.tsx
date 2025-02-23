@@ -1,16 +1,13 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { useAuth } from "@/hooks/use-auth";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import { Medal, LogOut } from "lucide-react";
+import { Medal } from "lucide-react";
 
 export default function Navbar() {
-  const { user, logoutMutation } = useAuth();
-
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
@@ -51,23 +48,6 @@ export default function Navbar() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-
-        <div className="ml-auto flex items-center gap-2">
-          {user ? (
-            <Button
-              variant="ghost"
-              onClick={() => logoutMutation.mutate()}
-              className="flex items-center gap-2"
-            >
-              <LogOut className="h-4 w-4" />
-              Logout
-            </Button>
-          ) : (
-            <Link href="/auth">
-              <Button className="bg-[#004B87] hover:bg-[#004B87]/90">Sign In</Button>
-            </Link>
-          )}
-        </div>
       </div>
     </header>
   );
