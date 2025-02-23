@@ -14,51 +14,31 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const StatDisplay = ({ label, value }: { label: string; value: number }) => (
   <div className="text-center">
-    <p className="text-xl md:text-2xl font-bold">{value}</p>
-    <p className="text-xs md:text-sm text-muted-foreground">{label}</p>
+    <p className="text-2xl font-bold">{value}</p>
+    <p className="text-sm text-muted-foreground">{label}</p>
   </div>
 );
 
 const SocialMediaLinks = ({ social }: { social: SocialMedia }) => (
-  <div className="flex gap-6 justify-center mt-4">
+  <div className="flex gap-4 justify-center mt-4">
     {social.instagram && (
-      <a 
-        href={social.instagram} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="p-2 hover:bg-accent rounded-full transition-colors"
-      >
-        <SiInstagram className="h-6 w-6 hover:text-[#E1306C]" />
+      <a href={social.instagram} target="_blank" rel="noopener noreferrer">
+        <SiInstagram className="h-5 w-5 hover:text-[#E1306C]" />
       </a>
     )}
     {social.twitter && (
-      <a 
-        href={social.twitter} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="p-2 hover:bg-accent rounded-full transition-colors"
-      >
-        <FaTwitter className="h-6 w-6 hover:text-[#1DA1F2]" />
+      <a href={social.twitter} target="_blank" rel="noopener noreferrer">
+        <FaTwitter className="h-5 w-5 hover:text-[#1DA1F2]" />
       </a>
     )}
     {social.facebook && (
-      <a 
-        href={social.facebook} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="p-2 hover:bg-accent rounded-full transition-colors"
-      >
-        <SiFacebook className="h-6 w-6 hover:text-[#4267B2]" />
+      <a href={social.facebook} target="_blank" rel="noopener noreferrer">
+        <SiFacebook className="h-5 w-5 hover:text-[#4267B2]" />
       </a>
     )}
     {social.youtube && (
-      <a 
-        href={social.youtube} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="p-2 hover:bg-accent rounded-full transition-colors"
-      >
-        <SiYoutube className="h-6 w-6 hover:text-[#FF0000]" />
+      <a href={social.youtube} target="_blank" rel="noopener noreferrer">
+        <SiYoutube className="h-5 w-5 hover:text-[#FF0000]" />
       </a>
     )}
   </div>
@@ -69,9 +49,9 @@ export default function PlayerCard({ player }: { player: Player }) {
   const socialMedia = player.social_media as SocialMedia;
 
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+    <Card className="overflow-hidden">
       <CardHeader className="space-y-1">
-        <CardTitle className="text-lg md:text-xl flex items-center gap-2">
+        <CardTitle className="text-xl flex items-center gap-2">
           {player.jersey_number && (
             <span className="text-sm bg-primary/10 px-2 py-1 rounded">
               #{player.jersey_number}
@@ -129,14 +109,11 @@ export default function PlayerCard({ player }: { player: Player }) {
         {player.highlight_video_url && (
           <Dialog>
             <DialogTrigger asChild>
-              <Button 
-                variant="outline" 
-                className="w-full py-6 text-lg"
-              >
+              <Button variant="outline" className="w-full">
                 Watch Highlights
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[800px] w-[95vw]">
+            <DialogContent className="sm:max-w-[800px]">
               <DialogHeader>
                 <DialogTitle>{player.name} Highlights</DialogTitle>
               </DialogHeader>
