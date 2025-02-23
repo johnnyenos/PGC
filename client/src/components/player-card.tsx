@@ -9,11 +9,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
@@ -24,44 +19,26 @@ const StatDisplay = ({ label, value }: { label: string; value: number }) => (
   </div>
 );
 
-const DetailedStatDisplay = ({ stats }: { stats: PlayerStats }) => (
-  <div className="w-[300px] space-y-4">
-    <div className="grid grid-cols-2 gap-4">
-      <StatDisplay label="PPG" value={stats.points_per_game} />
-      <StatDisplay label="APG" value={stats.assists_per_game} />
-      <StatDisplay label="RPG" value={stats.rebounds_per_game} />
-      <StatDisplay label="SPG" value={stats.steals_per_game} />
-      <StatDisplay label="BPG" value={stats.blocks_per_game} />
-      <StatDisplay label="FG%" value={stats.field_goal_percentage} />
-    </div>
-    <div className="pt-4 border-t">
-      <div className="text-sm text-muted-foreground">
-        3PT%: {stats.three_point_percentage}%
-      </div>
-    </div>
-  </div>
-);
-
 const SocialMediaLinks = ({ social }: { social: SocialMedia }) => (
   <div className="flex gap-4 justify-center mt-4">
     {social.instagram && (
       <a href={social.instagram} target="_blank" rel="noopener noreferrer">
-        <SiInstagram className="h-5 w-5 hover:text-[#E1306C] transition-colors" />
+        <SiInstagram className="h-5 w-5 hover:text-[#E1306C]" />
       </a>
     )}
     {social.twitter && (
       <a href={social.twitter} target="_blank" rel="noopener noreferrer">
-        <FaTwitter className="h-5 w-5 hover:text-[#1DA1F2] transition-colors" />
+        <FaTwitter className="h-5 w-5 hover:text-[#1DA1F2]" />
       </a>
     )}
     {social.facebook && (
       <a href={social.facebook} target="_blank" rel="noopener noreferrer">
-        <SiFacebook className="h-5 w-5 hover:text-[#4267B2] transition-colors" />
+        <SiFacebook className="h-5 w-5 hover:text-[#4267B2]" />
       </a>
     )}
     {social.youtube && (
       <a href={social.youtube} target="_blank" rel="noopener noreferrer">
-        <SiYoutube className="h-5 w-5 hover:text-[#FF0000] transition-colors" />
+        <SiYoutube className="h-5 w-5 hover:text-[#FF0000]" />
       </a>
     )}
   </div>
@@ -72,7 +49,7 @@ export default function PlayerCard({ player }: { player: Player }) {
   const socialMedia = player.social_media as SocialMedia;
 
   return (
-    <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+    <Card className="overflow-hidden">
       <CardHeader className="space-y-1">
         <CardTitle className="text-xl flex items-center gap-2">
           {player.jersey_number && (
@@ -95,22 +72,24 @@ export default function PlayerCard({ player }: { player: Player }) {
         </div>
 
         {stats && (
-          <HoverCard>
-            <HoverCardTrigger asChild>
-              <div className="grid grid-cols-4 gap-2 py-4 border-y cursor-pointer group-hover:bg-primary/5 transition-colors duration-300">
-                <StatDisplay label="PPG" value={stats.points_per_game} />
-                <StatDisplay label="APG" value={stats.assists_per_game} />
-                <StatDisplay label="RPG" value={stats.rebounds_per_game} />
-                <StatDisplay label="FG%" value={stats.field_goal_percentage} />
-              </div>
-            </HoverCardTrigger>
-            <HoverCardContent className="w-80" align="center">
-              <div className="space-y-2">
-                <h4 className="text-sm font-semibold">Detailed Statistics</h4>
-                <DetailedStatDisplay stats={stats} />
-              </div>
-            </HoverCardContent>
-          </HoverCard>
+          <div className="grid grid-cols-4 gap-2 py-4 border-y">
+            <StatDisplay 
+              label="PPG" 
+              value={stats.points_per_game} 
+            />
+            <StatDisplay 
+              label="APG" 
+              value={stats.assists_per_game} 
+            />
+            <StatDisplay 
+              label="RPG" 
+              value={stats.rebounds_per_game} 
+            />
+            <StatDisplay 
+              label="FG%" 
+              value={stats.field_goal_percentage} 
+            />
+          </div>
         )}
 
         <div className="space-y-2">
@@ -121,7 +100,7 @@ export default function PlayerCard({ player }: { player: Player }) {
         {player.team && (
           <div className="space-y-2">
             <p className="text-sm text-muted-foreground">Team</p>
-            <p className="font-medium capitalize">{player.team}</p>
+            <p className="font-medium">{player.team}</p>
           </div>
         )}
 
