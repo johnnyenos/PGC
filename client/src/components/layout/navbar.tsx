@@ -22,11 +22,6 @@ export default function Navbar() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/players">
-                <Button variant="ghost">Players</Button>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
               <Link href="/three-point">
                 <Button variant="ghost">3-Point Contest</Button>
               </Link>
