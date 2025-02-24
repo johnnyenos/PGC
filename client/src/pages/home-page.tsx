@@ -76,8 +76,9 @@ export default function HomePage() {
             </div>
             <div>
               <h3 className="font-bold text-xl">Location</h3>
-              <p>City Sports Arena</p>
-              <p>123 Basketball Court</p>
+              <p>Northside High School</p>
+              <p>926 Green St</p>
+              <p>Warner Robins, GA</p>
             </div>
           </div>
         </section>
