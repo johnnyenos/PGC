@@ -24,15 +24,16 @@ export default function HomePage() {
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="mt-4">
+            <div className="mt-4 flex justify-center">
               <a 
                 href="https://www.instagram.com/pure_game_hoops/" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                className="inline-block"
               >
                 <Button 
                   variant="outline" 
-                  className="flex items-center gap-2 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white border-none hover:opacity-90"
+                  className="flex items-center gap-2 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white border-none hover:opacity-90 px-6 py-2"
                 >
                   <SiInstagram className="h-5 w-5" />
                   Follow us on Instagram
