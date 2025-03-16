@@ -1,104 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style data-vite-theme="" data-inject-first="">:root {
-    --background: 0 0% 100%;
---foreground: 20 14.3% 4.1%;
---muted: 60 4.8% 95.9%;
---muted-foreground: 25 5.3% 44.7%;
---popover: 0 0% 100%;
---popover-foreground: 20 14.3% 4.1%;
---card: 0 0% 100%;
---card-foreground: 20 14.3% 4.1%;
---border: 20 5.9% 90%;
---input: 20 5.9% 90%;
---primary: 220 48% 8%;
---primary-foreground: 219 6% 97%;
---secondary: 60 4.8% 95.9%;
---secondary-foreground: 24 9.8% 10%;
---accent: 60 4.8% 95.9%;
---accent-foreground: 24 9.8% 10%;
---destructive: 0 84.2% 60.2%;
---destructive-foreground: 60 9.1% 97.8%;
---ring: 20 14.3% 4.1%;
---radius: 1rem;
-}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure Game Classic</title>
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+  <link href="https://embed.prod.simpletix.com/assets/widget/widget.min.css?t=2024.05.08" rel="stylesheet">
+  <style>
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 20 14.3% 4.1%;
+      --muted: 60 4.8% 95.9%;
+      --muted-foreground: 25 5.3% 44.7%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 20 14.3% 4.1%;
+      --card: 0 0% 100%;
+      --card-foreground: 20 14.3% 4.1%;
+      --border: 20 5.9% 90%;
+      --input: 20 5.9% 90%;
+      --primary: 220 48% 8%;
+      --primary-foreground: 219 6% 97%;
+      --secondary: 60 4.8% 95.9%;
+      --secondary-foreground: 24 9.8% 10%;
+      --accent: 60 4.8% 95.9%;
+      --accent-foreground: 24 9.8% 10%;
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 60 9.1% 97.8%;
+      --ring: 20 14.3% 4.1%;
+      --radius: 1rem;
+    }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-      --background: 240 10% 3.9%;
---foreground: 0 0% 98%;
---muted: 240 3.7% 15.9%;
---muted-foreground: 240 5% 64.9%;
---popover: 240 10% 3.9%;
---popover-foreground: 0 0% 98%;
---card: 240 10% 3.9%;
---card-foreground: 0 0% 98%;
---border: 240 3.7% 15.9%;
---input: 240 3.7% 15.9%;
---primary: 220 48% 8%;
---primary-foreground: 219 6% 97%;
---secondary: 240 3.7% 15.9%;
---secondary-foreground: 0 0% 98%;
---accent: 240 3.7% 15.9%;
---accent-foreground: 0 0% 98%;
---destructive: 0 62.8% 30.6%;
---destructive-foreground: 0 0% 98%;
---ring: 240 4.9% 83.9%;
---radius: 1rem;
-  }
-}
-.light {
-    --background: 0 0% 100%;
---foreground: 20 14.3% 4.1%;
---muted: 60 4.8% 95.9%;
---muted-foreground: 25 5.3% 44.7%;
---popover: 0 0% 100%;
---popover-foreground: 20 14.3% 4.1%;
---card: 0 0% 100%;
---card-foreground: 20 14.3% 4.1%;
---border: 20 5.9% 90%;
---input: 20 5.9% 90%;
---primary: 220 48% 8%;
---primary-foreground: 219 6% 97%;
---secondary: 60 4.8% 95.9%;
---secondary-foreground: 24 9.8% 10%;
---accent: 60 4.8% 95.9%;
---accent-foreground: 24 9.8% 10%;
---destructive: 0 84.2% 60.2%;
---destructive-foreground: 60 9.1% 97.8%;
---ring: 20 14.3% 4.1%;
---radius: 1rem;
-}
-.dark {
-    --background: 240 10% 3.9%;
---foreground: 0 0% 98%;
---muted: 240 3.7% 15.9%;
---muted-foreground: 240 5% 64.9%;
---popover: 240 10% 3.9%;
---popover-foreground: 0 0% 98%;
---card: 240 10% 3.9%;
---card-foreground: 0 0% 98%;
---border: 240 3.7% 15.9%;
---input: 240 3.7% 15.9%;
---primary: 220 48% 8%;
---primary-foreground: 219 6% 97%;
---secondary: 240 3.7% 15.9%;
---secondary-foreground: 0 0% 98%;
---accent: 240 3.7% 15.9%;
---accent-foreground: 0 0% 98%;
---destructive: 0 62.8% 30.6%;
---destructive-foreground: 0 0% 98%;
---ring: 240 4.9% 83.9%;
---radius: 1rem;
-}</style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: 240 10% 3.9%;
+        --foreground: 0 0% 98%;
+        --muted: 240 3.7% 15.9%;
+        --muted-foreground: 240 5% 64.9%;
+        --popover: 240 10% 3.9%;
+        --popover-foreground: 0 0% 98%;
+        --card: 240 10% 3.9%;
+        --card-foreground: 0 0% 98%;
+        --border: 240 3.7% 15.9%;
+        --input: 240 3.7% 15.9%;
+        --primary: 220 48% 8%;
+        --primary-foreground: 219 6% 97%;
+        --secondary: 240 3.7% 15.9%;
+        --secondary-foreground: 0 0% 98%;
+        --accent: 240 3.7% 15.9%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --ring: 240 4.9% 83.9%;
+        --radius: 1rem;
+      }
+    }
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <script type="module" crossorigin src="/assets/index-o_H4LDtz.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DvXYjffK.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+    body {
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+  </style>
+</head>
+<body>
+  <main class="relative z-10">
+    <section class="py-8 px-4">
+      <div class="container mx-auto text-center">
+        <div class="w-[300px] h-[300px] mx-auto">
+          <img src="/IMG_0099.png" alt="Pure Game Classic Logo" class="w-full h-full object-contain">
+        </div>
+        <div class="mt-4 flex justify-center gap-4">
+          <a href="https://www.instagram.com/pure_game_hoops/" target="_blank" rel="noopener noreferrer" class="inline-block">
+            <button class="flex items-center gap-2 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white border-none hover:opacity-90 px-6 py-2">
+              <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.375c.027-.334.04-.67.04-1.008 0-3.5-2.872-6.375-6.375-6.375s-6.375 2.872-6.375 6.375c0 3.5 2.872 6.375 6.375 6.375h.008v-4.167l-.008-.008zm-3.008 5.833v-4.167h-2.5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h2.5v-2.5c0-.276.224-.5.5-.5s.5.224.5.5v2.5h2.5c.276 0 .5.224.5.5s-.224.5-.5.5h-2.5z"></path></svg> Follow us on Instagram
+            </button>
+          </a>
+          <a class="simpletix-button-theme" onclick="createSimpleTixEmbed(this, '44054c2d-a2b3-40d5-b1eb-9c109234eb9d', '209595', '#pure-game-classic','Pure Game Classic'); return false;" data-url="https://embed.prod.simpletix.com/" data-enabledigitalwallets="true" style="background-color: #b77c26 !important; font-family: 'Poppins', sans-serif !important;" data-origin="11">Get Tickets</a>
+        </div>
+        <p class="text-2xl mt-4 text-white font-medium animate-fade-in" style="opacity:1">Where pure basketball dreams take flight</p>
+      </div>
+    </section>
+    <section class="py-6">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="w-full aspect-video rounded-lg bg-black">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+              <source src="/PGCvid.MP4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="text-gray-400 text-center mt-4">Experiencing the Pure Game Classic</p>
+        </div>
+      </div>
+    </section>
+    <section class="py-6">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-medium mb-4">Register for Pure Game Classic</h2>
+          <form action="https://formspree.io/f/your_form_id" method="POST" class="space-y-4">
+            <div>
+              <label for="name">Name:</label>
+              <input type="text" name="name" id="name" required class="w-full p-2 border rounded">
+            </div>
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" name="email" id="email" required class="w-full p-2 border rounded">
+            </div>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:opacity-90">Register</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="https://embed.prod.simpletix.com/assets/widget/widget.min.js?t=2025.02.19" type="text/javascript"></script>
+</body>
 </html>
