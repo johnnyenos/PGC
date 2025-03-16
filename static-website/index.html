@@ -92,19 +92,27 @@
         --ring: 240 4.9% 83.9%;
         --radius: 1rem;
     }
+
+    /* Custom styles for the ticket button container */
+    .ticket-button-container {
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      z-index: 10; /* Ensure it stays above other content */
+    }
     </style>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <script type="module" crossorigin src="/assets/index-o_H4LDtz.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-DvXYjffK.css">
+    <link href="https://embed.prod.simpletix.com/assets/widget/widget.min.css?t=2024.05.08" rel="stylesheet">
+    <script src="https://embed.prod.simpletix.com/assets/widget/widget.min.js?t=2025.02.19" type="text/javascript"></script>
   </head>
   <body>
-    <div id="root"></div>
-    <div>
-      <a class="simpletix-button-theme" onclick="createSimpleTixEmbed(this, '44054c2d-a2b3-40d5-b1eb-9c109234eb9d', '209595', '#pure-game-classic', 'Pure Game Classic'); return false;" data-url="https://embed.prod.simpletix.com/" data-enabledigitalwallets="true" style="background-color: #b77c26 !important;font-family: 'Poppins', sans-serif !important;" data-origin="11">Get Tickets</a>
-      <link href="https://embed.prod.simpletix.com/assets/widget/widget.min.css?t=2024.05.08" rel="stylesheet">
-      <script src="https://embed.prod.simpletix.com/assets/widget/widget.min.js?t=2025.02.19" type="text/javascript"></script>
+    <div class="ticket-button-container">
+      <a class="simpletix-button-theme" onclick="createSimpleTixEmbed(this, '44054c2d-a2b3-40d5-b1eb-9c109234eb9d', '209595', '#pure-game-classic', 'Pure Game Classic'); return false;" data-url="https://embed.prod.simpletix.com/" data-enabledigitalwallets="true" style="background-color: #b77c26 !important; font-family: 'Poppins', sans-serif !important; padding: 10px 20px; display: inline-block;" data-origin="11">Get Tickets</a>
     </div>
+    <div id="root"></div>
   </body>
 </html>
