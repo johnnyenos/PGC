@@ -93,12 +93,12 @@
         --radius: 1rem;
     }
 
-    /* Custom styles for the ticket button container */
+    /* Custom styles for ticket buttons */
     .ticket-button-container {
       text-align: center;
       padding: 20px 0;
       position: relative;
-      z-index: 10; /* Ensure it stays above other content */
+      z-index: 10;
     }
     </style>
 
@@ -110,9 +110,35 @@
     <script src="https://embed.prod.simpletix.com/assets/widget/widget.min.js?t=2025.02.19" type="text/javascript"></script>
   </head>
   <body>
+    <!-- "Get Tickets" button at the top -->
     <div class="ticket-button-container">
-      <a class="simpletix-button-theme" onclick="createSimpleTixEmbed(this, '44054c2d-a2b3-40d5-b1eb-9c109234eb9d', '209595', '#pure-game-classic', 'Pure Game Classic'); return false;" data-url="https://embed.prod.simpletix.com/" data-enabledigitalwallets="true" style="background-color: #b77c26 !important; font-family: 'Poppins', sans-serif !important; padding: 10px 20px; display: inline-block;" data-origin="11">Get Tickets</a>
+      <a
+        class="simpletix-button-theme"
+        onclick="createSimpleTixEmbed(this, '44054c2d-a2b3-40d5-b1eb-9c109234eb9d', '209595', '#pure-game-classic', 'Pure Game Classic'); return false;"
+        data-url="https://embed.prod.simpletix.com/"
+        data-enabledigitalwallets="true"
+        style="background-color: #b77c26 !important; font-family: 'Poppins', sans-serif !important; padding: 10px 20px; display: inline-block; color: white;"
+        data-origin="11"
+      >
+        Get Tickets
+      </a>
     </div>
+
+    <!-- React root for dynamic content (video section) -->
     <div id="root"></div>
+
+    <!-- "Get Tickets" button at the bottom -->
+    <div class="ticket-button-container">
+      <a
+        class="simpletix-button-theme"
+        onclick="createSimpleTixEmbed(this, '44054c2d-a2b3-40d5-b1eb-9c109234eb9d', '209595', '#pure-game-classic', 'Pure Game Classic'); return false;"
+        data-url="https://embed.prod.simpletix.com/"
+        data-enabledigitalwallets="true"
+        style="background-color: #b77c26 !important; font-family: 'Poppins', sans-serif !important; padding: 10px 20px; display: inline-block; color: white;"
+        data-origin="11"
+      >
+        Get Tickets
+      </a>
+    </div>
   </body>
 </html>
